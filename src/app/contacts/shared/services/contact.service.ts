@@ -14,14 +14,14 @@ export class ContactService {
 
   public getContacts(): any {
     return this.http.get(this.contactsUrl)
-               .toPromise()
-               .then(response => response as Contact[])
-               .catch(this.handleError);
+      .toPromise()
+      .then(response => response as Contact[])
+      .catch(this.handleError);
   }
 
   public getContact(id: number): Promise<Contact> {
     return this.getContacts()
-               .then(contacts => contacts.find(contact => contact.id === id));
+      .then(contacts => contacts.find(contact => contact.id === id));
   }
 
   public save(contact: Contact): Promise<Contact> {
@@ -40,28 +40,28 @@ export class ContactService {
     const url = `${this.contactsUrl}/${contact.id}`;
 
     return this.http
-             .delete(url, {headers: this.headers})
-             .toPromise()
-             .then(() => null)
-             .catch(this.handleError);
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
   }
 
   public post(contact: Contact): Promise<Contact> {
     return this.http
-        .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
-        .toPromise()
-        .then(res => res)
-        .catch(this.handleError);
+      .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
+      .toPromise()
+      .then(res => res)
+      .catch(this.handleError);
   }
 
   public put(contact: Contact): Promise<Contact> {
     const url = `${this.contactsUrl}/${contact.id}`;
 
     return this.http
-             .put(url, JSON.stringify(contact), {headers: this.headers})
-             .toPromise()
-             .then(() => contact)
-             .catch(this.handleError);
+      .put(url, JSON.stringify(contact), {headers: this.headers})
+      .toPromise()
+      .then(() => contact)
+      .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any> {
@@ -69,3 +69,4 @@ export class ContactService {
     return Promise.reject(error.message || error);
   }
 }
+
