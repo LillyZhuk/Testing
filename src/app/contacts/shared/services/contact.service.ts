@@ -13,10 +13,10 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   public getContacts(): any {
-    return this.http.get(this.contactsUrl)
-      .toPromise()
-      .then(response => response as Contact[])
-      .catch(this.handleError);
+    return this.http.get(this.contactsUrl);
+      // .toPromise()
+      // .then(response => response as Contact[])
+      // .catch(this.handleError);
   }
 
   public getContact(id: number): Promise<Contact> {
