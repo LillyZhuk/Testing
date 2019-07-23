@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IContactPreference } from './preferences.service';
 
 @Injectable()
 export class BrowserStorageService {

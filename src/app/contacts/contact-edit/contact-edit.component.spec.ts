@@ -1,9 +1,11 @@
 /** The top six lines contain the Angular testing dependencies.*/
 import { DebugElement } from '@angular/core'; /** DebugElement will debug the elements you select. */
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing'; /** These dependencies are from the Angular core testing library.*/
+/** These dependencies are from the Angular core testing library.*/
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser'; /** Uses By to select elements*/
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; /** Uses NoopAnimationsModule to simulate animations*/
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing'; /** Uses BrowserDynamicTestingModule to bootstrap browser for testing*/
+/** Uses BrowserDynamicTestingModule to bootstrap browser for testing*/
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { RouterTestingModule } from '@angular/router/testing'; /** Uses RouterTestingModule to test routing*/
 /** Angular nontesting dependencies*/
 import { FormsModule } from '@angular/forms';
